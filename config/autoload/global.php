@@ -11,6 +11,22 @@
  * file.
  */
 
+
 return [
-    // ...
+    'db' => [
+        'driver'   => 'Pdo',
+        'dsn'      => 'mysql:host=192.168.99.99',
+        'username' => 'root',
+        'password' => '123',
+        'port'     => 3306,
+        'driver_options' => [
+            PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES UTF8"
+        ],
+    ],
+
+    'service_manager' => [
+        'factories' => [
+            'Zend\Db\Adapter\Adapter' => 'Zend\Db\Adapter\AdapterServiceFactory',
+        ],
+    ],
 ];

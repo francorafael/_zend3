@@ -34,8 +34,8 @@ apt-get install -y dos2unix --force-yes
 apt-get install -y phpunit --force-yes
 
 export DEBIAN_FRONTEND="noninteractive"
-sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password 123456'
-sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password 123456'
+sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password 123'
+sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password 123'
 sudo apt-get -y install mysql-server
 
 echo "
