@@ -15,7 +15,7 @@
 return [
     'db' => [
         'driver'   => 'Pdo',
-        'dsn'      => 'mysql:host=192.168.99.99',
+        'dsn'      => 'mysql:dbname=_bd_zend3;host=192.168.99.99',
         'username' => 'root',
         'password' => '123',
         'port'     => 3306,
