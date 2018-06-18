@@ -7,7 +7,7 @@ phpunit.xml
 .~lock.*
 .buildpath
 .DS_Store
-.idea
+.idea/
 composer.phar
 .public/doc
 ._*
