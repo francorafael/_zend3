@@ -1,6 +1,13 @@
 .vagrant/
-vendor/
+vendor
 config/development.config.php
 data/cache/*
 !data/cache/.gitkeep
 phpunit.xml
+.~lock.*
+.buildpath
+.DS_Store
+.idea
+composer.phar
+.public/doc
+._*

@@ -1,0 +1,26 @@
+# Turn on rewrites.
+RewriteEngine on
+
+# Only apply to URLs on this domain
+#RewriteCond %{HTTP_HOST} ^(www.)?armazene.net$
+# Only apply to URLs that arent already under folder.
+RewriteCond %{REQUEST_URI} !^/public/
+
+# Dont apply to URLs that go to existing files or folders.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Rewrite all those to insert /folder.
+RewriteRule \.(php|js|jpg|png|css|jpeg|pdf|xml|html|eot|svg|ttf|woff)$ /public/%{REQUEST_URI} [L]
+
+RewriteRule ^(.)?$ /init_atuoloader.php [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-l
+RewriteRule .* /init_atuoloader.php [L]
+
+<IfModule mod_headers.c>
+    Header add Access-Control-Allow-Credentials "true"
+    Header add Access-Control-Allow-Headers     "Origin, X-Requested-With, X-CSRF-Token, Content-Type, Authorization, Accept"
+</IfModule>
